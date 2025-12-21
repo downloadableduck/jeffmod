@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "jeffmod:jeff_armor"
+      }
+    ],
+    "humanoid_leggings": [
+  {
+    "texture": "jeffmod:jeff_armor_leggings"
+  }
+]
+  }
+}
