@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "jeffmod",
+	"version": "1.0",
+	"name": "JeffMod",
+	"description": "jeff",
+	"authors": [
+		"downloadableduck"
+	],
+	"contact": {
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/jeffmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "com.jeff.JeffMod",
+          "com.jeff.JeffOres"
+		],
+		"client": [
+			"com.jeff.JeffmodClient"
+		]
+	},
+	"mixins": [
+      "jeff-mod.mixins.json",
+		{
+			"config": "jeffmod.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.3",
+		"minecraft": "~1.21.10",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

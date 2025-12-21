@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        " / ",
+        " / "
+    ],
+    "key": {
+        "#": "jeffmod:jeff_ingot",
+        "/": "minecraft:stick"
+    },
+    "result": {
+        "id": "jeffmod:jeff_pickaxe",
+        "count": 1
+    }
+}

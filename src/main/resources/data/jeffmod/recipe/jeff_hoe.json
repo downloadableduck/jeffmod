@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "## ",
+        " / ",
+        " / "
+    ],
+    "key": {
+        "#": "jeffmod:jeff_ingot",
+        "/": "jeffmod:jeff_hoe"
+    },
+    "result": {
+        "id": "jeffmod:jeff_leggings",
+        "count": 1
+    }
+}
