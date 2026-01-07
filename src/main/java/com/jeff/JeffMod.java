@@ -5,7 +5,7 @@ package com.jeff;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -21,6 +21,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -78,7 +79,7 @@ public class JeffMod implements ModInitializer {
             .build();
     public static final FoodProperties SLOWNESS_FOOD_COMPONENT = new FoodProperties.Builder()
             .build();
-    public static final TagKey<Item> REPAIRS_JEFF_ARMOR = TagKey.create(BuiltInRegistries.ITEM.key(), ResourceLocation.fromNamespaceAndPath(JeffMod.MOD_ID, "repairs_jeff_armor"));
+    public static final TagKey<@NotNull Item> REPAIRS_JEFF_ARMOR = TagKey.create(BuiltInRegistries.ITEM.key(), Identifier.fromNamespaceAndPath(JeffMod.MOD_ID, "repairs_jeff_armor"));
     public static final ToolMaterial JEFF_TOOL_MATERIAL = new ToolMaterial(
             BlockTags.ANVIL,
             1,
@@ -161,7 +162,7 @@ public class JeffMod implements ModInitializer {
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_PICKAXE));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_AXE));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_SWORD));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_HELMET));
@@ -171,10 +172,16 @@ public class JeffMod implements ModInitializer {
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_LEGGINGS));
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_BOOTS));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> {
-            itemGroup.accept(JeffMod.JEFF_BLOCK.asItem());
-        });
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_BLOCK.asItem()));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+                        .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_HOE));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS)
+                        .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_ORE.asItem()));
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS)
+                        .register((itemGroup) -> itemGroup.accept(JeffMod.DEEPSLATE_JEFF_ORE.asItem()));
+
         LOGGER.info("jeff");
+
     }
 }
 

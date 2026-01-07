@@ -3,12 +3,13 @@
 package com.jeff;
 
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.equipment.ArmorMaterial;
 import net.minecraft.world.item.equipment.ArmorType;
 import net.minecraft.world.item.equipment.EquipmentAsset;
 import net.minecraft.world.item.equipment.EquipmentAssets;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
 
@@ -16,9 +17,8 @@ import static com.jeff.JeffMod.REPAIRS_JEFF_ARMOR;
 
 public class JeffArmor {
     public static final int BASE_DURABILITY = 1;
-    public static final int DEFENSE = 2;
 
-    public static final ResourceKey<EquipmentAsset> JEFF_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, ResourceLocation.fromNamespaceAndPath(JeffMod.MOD_ID, "jeff_ingot"));
+    public static final ResourceKey<@NotNull EquipmentAsset> JEFF_ARMOR_MATERIAL_KEY = ResourceKey.create(EquipmentAssets.ROOT_ID, Identifier.fromNamespaceAndPath(JeffMod.MOD_ID, "jeff_armor"));
     public static final ArmorMaterial INSTANCE = new ArmorMaterial(
             BASE_DURABILITY,
             Map.of(
