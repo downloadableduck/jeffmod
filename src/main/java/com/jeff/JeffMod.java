@@ -3,10 +3,11 @@
 package com.jeff;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -154,30 +155,30 @@ public class JeffMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_INGOT));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_SHOVEL));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_PICKAXE));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_AXE));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_SWORD));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_HELMET));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_CHESTPLATE));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_LEGGINGS));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.COMBAT)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.COMBAT)
                 .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_BOOTS));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_BLOCK.asItem()));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_BLOCK.asItem()));
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.TOOLS_AND_UTILITIES)
                         .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_HOE));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS)
                         .register((itemGroup) -> itemGroup.accept(JeffMod.JEFF_ORE.asItem()));
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS)
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS)
                         .register((itemGroup) -> itemGroup.accept(JeffMod.DEEPSLATE_JEFF_ORE.asItem()));
 
         LOGGER.info("jeff");
