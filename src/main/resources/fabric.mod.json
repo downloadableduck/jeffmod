@@ -1,16 +1,17 @@
 {
 	"schemaVersion": 1,
 	"id": "jeffmod",
-	"version": "1.0",
+	"version": "${version}",
 	"name": "JeffMod",
 	"description": "jeff",
 	"authors": [
 		"downloadableduck"
 	],
 	"contact": {
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/downloadableduck/jeffmod",
+      "issues": "https://github.com/downloadableduck/jeffmod/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/jeffmod/icon.png",
 	"environment": "*",
 	"entrypoints": {
